@@ -29,7 +29,7 @@ class MyApp extends  StatelessWidget{
                         child: Row(
                           children: [
                             Image.asset('assets/images/map.png', width: 24),
-                            SizedBox(width: 10),
+                            SizedBox(width: 20),
                             Text(
                               'Semarang',
                               style: TextStyle(
@@ -65,14 +65,26 @@ class MyApp extends  StatelessWidget{
                 colors: [
                   Color(0xFF48B8E5),
                   Color(0xFF4297FF),
-                  
+
                 ],
               ),
             ),
-            child: Center(
-              child: Image.asset('assets/images/sunny.png'),
-            )
+              child:  Stack(
+                children: [
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    child: Image.asset(
+                      'assets/images/sunny.png',
+                      width: 100,
+                    ),
+                  ),
+                ],
+              ),
+
             ),
+
           ),
 
 
