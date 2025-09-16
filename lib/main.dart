@@ -13,16 +13,7 @@ class MyApp extends  StatelessWidget{
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(60), // ← высота AppBar
             child: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color(0xFF48B8E5),
-                    Color(0xFF4A99FA),
-                  ],
-                ),
-              ),
+             color: Color(0xFF48B8E5),
               child: SafeArea( // чтобы кнопки не уехали под статус-бар
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -67,10 +58,24 @@ class MyApp extends  StatelessWidget{
             ),
           ),
           body: Container(
-            color: Colors.white, // фон контента
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF48B8E5),
+                  Color(0xFF4297FF),
+                  
+                ],
+              ),
+            ),
+            child: Center(
+              child: Image.asset('assets/images/sunny.png'),
+            )
+            ),
           ),
 
-    ),
+
     );
   }
 }
