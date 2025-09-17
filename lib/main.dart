@@ -9,86 +9,71 @@ class MyApp extends  StatelessWidget{
     return MaterialApp(
       theme: ThemeData(),
 
-        home: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(60), // ← высота AppBar
-            child: Container(
-             color: Color(0xFF48B8E5),
-              child: SafeArea( // чтобы кнопки не уехали под статус-бар
+      home: Scaffold(
+        body:
+        Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xFF48B8E5),
+                Color(0xFF4297FF),
+
+              ],
+            ),
+          ),
+          child:
+          Column (
+            children: [
+
+              Container(
                 child: Padding(
                   padding: const EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // Левая кнопка
-                      TextButton(
-                        onPressed: () => print("кнопка нажата"),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
+                  child: TextButton(
+                    onPressed: () => print("кнопка нажата"),
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Row(
+                      children: [
+                        Image.asset('assets/images/map.png', width: 24),
+                        SizedBox(width: 20),
+                        Text(
+                          'Semarang',
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
                         ),
-                        child: Row(
-                          children: [
-                            Image.asset('assets/images/map.png', width: 24),
-                            SizedBox(width: 20),
-                            Text(
-                              'Semarang',
-                              style: TextStyle(
-                                fontSize: 24,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(width: 20),
-                            Image.asset('assets/images/opt.png', width: 24),
-                          ],
-                        ),
-                      ),
-
-                      // Правая кнопка
-                      IconButton(
-                        onPressed: () => print("Кнопка справа нажата"),
-                        icon: Image.asset(
-                          'assets/images/notification.png',
-                          width: 24,
-                        ),
-                      ),
-                    ],
+                        SizedBox(width: 20),
+                        Image.asset('assets/images/opt.png', width: 24),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-          body: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFF48B8E5),
-                  Color(0xFF4297FF),
 
-                ],
+              Align(
+                  alignment: Alignment.center,
+                  child:Padding(padding: const EdgeInsets.only(top:30),
+                      child:
+                      Image.asset('assets/images/sunny.png')
+                  )
+
+
               ),
-            ),
-              child:  Stack(
-                children: [
-                  Positioned(
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    child: Image.asset(
-                      'assets/images/sunny.png',
-                      width: 100,
-                    ),
-                  ),
-                ],
-              ),
-
-            ),
-
+            ],
           ),
 
+        ),
 
-    );
+
+
+        ),
+
+      );
+
+
   }
 }
-
