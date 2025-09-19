@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Container(
+                    icon: Container (
                       child: Row(
                         children: [
                           Image.asset(
@@ -55,9 +55,7 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    decoration:BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
+
 
                     color: Color(0x5bffffff),
                     child: SizedBox(
