@@ -1,79 +1,169 @@
-
 import 'package:flutter/material.dart';
 
-void main() =>  runApp(MyApp());
+void main() => runApp(MyApp());
 
-class MyApp extends  StatelessWidget{
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
-
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body:
-        Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF48B8E5),
-                Color(0xFF4297FF),
-
-              ],
-            ),
-          ),
-          child:
-          Column (
+        backgroundColor: Colors.blue,
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment:MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextButton(
-                    onPressed: () => print("кнопка нажата"),
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/map.png', width: 24),
-                        SizedBox(width: 20),
-                        Text(
-                          'Semarang',
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.white,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Container(
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            "assets/images/marker.png",
+                            width: 24,
                           ),
-                        ),
-                        SizedBox(width: 20),
-                        Image.asset('assets/images/opt.png', width: 24),
-                      ],
+                          Text(
+                            "Semarang",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                            ),
+                          ),
+                          Image.asset("assets/images/opt.png", width: 24)
+                        ],
+                      ),
                     ),
                   ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Image.asset("assets/images/notification.png"))
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/sun.png"),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration:BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+
+                    color: Color(0x5bffffff),
+                    child: SizedBox(
+
+                      width: 300,
+                      height: 300,
+                      child: Center(
+                          child: Column(
+                            children: [
+                              Text("Today, 12 September",
+                                  style:
+                                  TextStyle(fontSize: 24, color: Colors.white)),
+                              Text(
+                                "29°",
+                                style:
+                                TextStyle(fontSize: 100, color: Colors.white),
+                              ),
+                              Text("Cloudy",
+                                  style:
+                                  TextStyle(fontSize: 24, color: Colors.white)),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Image.asset("assets/images/windy.png"),
+                                  Text(
+                                    "Wind",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                  Text(
+                                    "|",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                  Text(
+                                    "10 km/h",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Image.asset("assets/images/hum.png"),
+                                  Text(
+                                    "Hum",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                  Text(
+                                    "|",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                  Text(
+                                    "54 %",
+                                    style: TextStyle(
+                                        fontSize: 24, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child:SizedBox (
+                        width:300,
+                    child: TextButton  (
+                        style: TextButton.styleFrom(
+                        backgroundColor:Colors.white,
 
-              Align(
-                  alignment: Alignment.center,
-                  child:Padding(padding: const EdgeInsets.only(top:30),
-                      child:
-                      Image.asset('assets/images/sunny.png')
-                  )
+
+                ),
 
 
-              ),
+                                onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+
+
+                                  children: [
+
+                                    Text("Forecast report"),
+                                    Image.asset("assets/images/up.png"),
+                                  ],
+                                ),
+                              ),
+
+
+                        ),
+
+                    ),
+                  ],
+                ),
             ],
           ),
-
         ),
-
-
-
-        ),
-
-      );
-
-
+      ),
+    );
   }
 }
